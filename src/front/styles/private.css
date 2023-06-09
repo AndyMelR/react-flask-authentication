@@ -1,0 +1,27 @@
+.dashboard {
+    position: relative;
+    height: 100vh;
+}
+  
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://media.giphy.com/media/2UxWBIttMvvIJ55hTe/giphy-downsized-large.gif");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+  
+.welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+}
+  

@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap');
+
+.login,
+.image {
+  min-height: 100vh;
+}
+.bg-image {
+  background-image: url('https://media.giphy.com/media/l5JbspfwZ0yjHjlJ0K/giphy-downsized-large.gif');
+  background-size: cover;
+  background-position: center center;
+}
