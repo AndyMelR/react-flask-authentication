@@ -54,6 +54,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const {token} = await response.json();
 				setStore({ ...getStore(), token });
 			  },
+			  
 			  getUser: async () => {
 				const token = getStore().user.token; // <-- obtener token de user del store
 				const response = await fetch(process.env.BACKEND_URL + "/api/user", {

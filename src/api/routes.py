@@ -17,7 +17,7 @@ user_service = UserService()
 def handle_hello():
 
     response_body = {
-        "message": "Bienvenido! Esto es un ejercicio de API. Espero que te guste."
+        "message": "Bienvenido! Esto es un ejercicio sobre autentificación. Espero que te guste."
     }
 
     return jsonify(response_body), 200
