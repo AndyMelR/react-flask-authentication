@@ -25,17 +25,21 @@ const LoginForm = () => {
     setSubmitted(false);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
       setError(true);
     } else {
-      actions.setUser(email, password);
-      navigate("/private");
+      try {
+        await actions.setUser(email, password);
+        navigate("/private");
+      } catch (error) {
+        setError(true);
+      }
       setSubmitted(true);
-      setError(false);
     }
   };
+  
 
   return (
     <Form onSubmit={handleLogin}>

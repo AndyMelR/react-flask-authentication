@@ -95,7 +95,18 @@ def private():
 @api.route('/logout', methods=['POST'])
 @jwt_required()
 def logout():
-    current_user_id = get_jwt_identity()
-    user = User.filter.get(current_user_id)
-    return jsonify({'message': 'Logout exitoso'})
+    try:
+        # Clear the access token from the client-side (e.g., remove it from local storage)
+        # You can also invalidate the token on the server-side if needed
+        # For example, you can add the token to a blacklist or set its expiration time to the past
+        # This depends on your specific implementation and requirements
+        # Here, we'll simply clear the token from the client-side
+
+        # Assuming you're using Flask's session-based JWT, you can remove the access token from the session
+        session.pop('jwt', None)
+
+        return jsonify({'message': 'Logout successful'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
 

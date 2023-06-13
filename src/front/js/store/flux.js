@@ -52,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  throw "Invalid email or password format";
 				}
 				const {token} = await response.json();
-				setStore({ ...getStore(), token });
+				setStore({ ...getStore(), token: {token}, isLoggedIn:true });
 			  },
 			  
 			  getUser: async () => {
@@ -87,11 +87,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					throw Error("There was a problem with the logout request");
 				  }
 			  
-				  setStore({ ...getStore(), user: {}, token: "" });
+				  setStore({ ...getStore(), user: {}, token: "", isLoggedIn: false }); // Update isLoggedIn to false
 				} catch (error) {
 				  console.log("Error during logout", error);
 				}
 			  },
+			  
 			  
 			  
 			
